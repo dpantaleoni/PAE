@@ -4,12 +4,17 @@ import * as AiIcons from "react-icons/ai";
 import { useState } from "react";
 import { SidebarData } from "./SidebarData";
 import './Sidebar.css';
+import { IconContext } from "react-icons/lib";
 
 const Sidebar = () => {
+
   const [sidebar, setsidebar] = useState(false)
+
   const showsidebar = () => setsidebar(!sidebar)
-    return (
+    
+  return (
       <>
+      <IconContext.Provider value= {{color: '#fff'}}>
         <div className="navbar">
           <Link to='#' className="menu-bars">
             <FaIcons.FaBars onClick={showsidebar} />
@@ -19,7 +24,7 @@ const Sidebar = () => {
           <ul className="menu-items">
             <li className="sidebar-toggle">
               <Link to="#" className="menu-bars">
-                <AiIcons.AiOutlineClose />
+                <AiIcons.AiOutlineClose onClick={showsidebar}/>
               </Link>
             </li>
             <li>
@@ -36,7 +41,9 @@ const Sidebar = () => {
             </li>
           </ul>
         </nav>
+      </IconContext.Provider>
       </>
+
     );
   }
 

@@ -31,8 +31,8 @@ export const SidebarData = [
         cName: 'nav-text'
     },
     {
-        title: 'Spray',
-        path: '/spray',
+        title: 'Spray Data',
+        path: '/spraydata',
         icon: <GiIcons.GiChemicalBolt />,
         cName: 'nav-text'
     },
